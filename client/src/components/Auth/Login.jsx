@@ -23,7 +23,7 @@ function Login() {
 
   return (
     <>
-      <div classNameName="container mx-auto bg-red-300 font-bold">
+      <div className="container mx-auto  font-bold">
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2 m-auto my-8 mt-1/3 md:w-1/4 sm:w-99 lg:1/4" style={{
           marginTop:'10%'
         }} >
