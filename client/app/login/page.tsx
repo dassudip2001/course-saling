@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function LoginPage() {
   return (
-    <div className="flex mt-[10%] ml-[40%]">
-      <div className="w-1/3 bg-gray-200 p-8 dark:bg-slate-600">
+    <div className="flex mt-[15%]  md:mt-[10%] ml-[40%]">
+      <div className="w-1/2 bg-gray-200 p-8 dark:bg-slate-600 md:w-1/3">
         {/* logo */}
         <div className="mb-2">
           <Image
@@ -76,7 +76,13 @@ export default function LoginPage() {
         <div className="">
           <p className="text-center gap-4">
             Don't have an account?
-            <Link href="/register" className="text-blue-500 gap-x-4">
+            <Link
+              href="/register"
+              style={{
+                marginLeft: "0.5rem",
+              }}
+              className="text-blue-500 gap-x-4"
+            >
               Register
             </Link>
           </p>
