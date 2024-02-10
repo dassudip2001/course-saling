@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/server/src/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -50,6 +51,7 @@ func ConnectDb() {
 
 	// db.AutoMigrate(&models.Resource{})
 	// db.Migrator().DropTable(&models.Booking{})
+	db.AutoMigrate(&models.Category{})
 
 	database = Dbinstance{Db: db}
 
