@@ -28,6 +28,8 @@ func main() {
 	app.Use(cors.New())
 	// web rouete
 	web.SetupRoute(app)
+	// category route
+	api.ServiceApi(app)
 
 	// default error page
 	app.Use(func(c *fiber.Ctx) error {

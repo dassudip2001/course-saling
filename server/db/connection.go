@@ -12,20 +12,15 @@ import (
 	"gorm.io/gorm/logger"
 )
 
-type Dbinstance struct {
+type DbInstance struct {
 	Db *gorm.DB
 }
 
-var database Dbinstance
+var Database DbInstance
 
 func ConnectDb() {
-	// load env file
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
-	// db variable
+	godotenv.Load()
+	// Get the database credentials from environment variables
 	dbUser := os.Getenv("DB_USER")
 	dbPassword := os.Getenv("DB_PASSWORD")
 	dbHost := os.Getenv("DB_HOST")
@@ -49,10 +44,9 @@ func ConnectDb() {
 	// db.AutoMigrate(&models.Category{}, &models.Product{}, &models.Location{}, &models.MettingRoom{}, &models.Resource{}, &models.Booking{})
 	// db.AutoMigrate(&models.Resource{}, &models.Catering{})
 
-	// db.AutoMigrate(&models.Resource{})
-	// db.Migrator().DropTable(&models.Booking{})
 	db.AutoMigrate(&models.Category{})
+	// db.AutoMigrate(&models.Resource{})
+	// db.Migrator().DropTable(&models.Category{})
 
-	database = Dbinstance{Db: db}
-
+	Database = DbInstance{Db: db}
 }

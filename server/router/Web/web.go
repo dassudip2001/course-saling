@@ -8,4 +8,5 @@ func welcome(c *fiber.Ctx) error {
 
 func SetupRoute(app *fiber.App) {
 	app.Get("/", welcome)
+
 }
