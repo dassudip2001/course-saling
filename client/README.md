@@ -1,13 +1,3 @@
-## Getting Started
+# create endearment file
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+.env.local
